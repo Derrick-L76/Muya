@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakili Muyathi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #af4c9d, #e51e5a);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            background: rgba(152, 0, 101, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .poem-container {
+            background: rgba(255, 0, 0, 0.295);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            color: #f0e6f6;
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* width: 400px; */
+            /* max-width: 90%; */
+            margin: 0 0px;
+            text-align: center;
+        }
+
+        .poem {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-family: 'Georgia', serif;
+            /* font-size: 1.5rem; */
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        .poem-left {
+            left: -320px;
+            text-align: left;
+        }
+
+        .poem-right {
+            right: -320px;
+            text-align: right;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: rgb(255, 255, 255);
+            margin-bottom: 20px;
+        }
+
+        video {
+            width: 50%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .play-button {
+            margin-top: 2px;
+            padding: 20px 20px;
+            font-size: 2rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bolder;
+            font-style: normal;
+            color: white;
+            background: #f700a0;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .play-button:hover {
+            background: #f54141;
+            transform: scale(1.05);
+        }
+
+        .play-button:hover::after {
+            content: "😊 🌸 🌹 ❤️";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            animation: floatUp 1s ease;
+            color: #FF4081;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        .play-button:active {
+            background: #0D47A1;
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            video {
+                width: 100%;
+            }
+
+            /* .poem {
+                font-size: 1.2rem;
+            } */
+
+            .poem-container {
+                font-size: 1rem;
+                padding: 15px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="background-audio" loop>
+        <source src="saint-jhn-the-best-part-of-life-official-music-video_N2K4SBWR.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.getElementById('background-audio').volume = 0.1; // Set volume to 50%
+
+        // Function to play audio when the video is clicked
+        function playAudioOnClick() {
+            const audio = document.getElementById('background-audio');
+            audio.play()
+                .then(() => {
+                    console.log("Audio started successfully.");
+                })
+                .catch((error) => {
+                    console.error("Audio playback failed:", error);
+                    alert("Audio playback failed. Ensure the file is accessible and autoplay restrictions are met.");
+                });
+        }
+    </script>
+
+    <div class="container">
+        <!-- Poem on the left -->
+        <div class="poem-left poem poem-container">
+            <p>
+                In a fleeting moment, our paths aligned, <br>
+                A spark ignited, two souls intertwined. <br>
+                Your laughter, like music, played in the air, <br>
+                A melody sweet, so gentle and rare. <br>
+
+                With every glance, my heart took flight, <br>
+                As the world around us faded from sight. <br>
+                Your eyes, like stars, hold stories untold, <br>
+                A universe glimmering, brilliant and bold. 
+            </p>
+        </div>
+
+        <!-- Video Element -->
+        <!-- <h1><button class="play-button" onclick="document.getElementById('background-audio').play()">Wakili Muyathi</button></h1> -->
+        <video controls muted loop onclick="playAudioOnClick()">
+            <source src="muyathi vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Poem on the right -->
+        <div class="poem-right poem poem-container">
+            <p>
+                The warmth of your smile, a soft summer breeze, <br>
+                Brings comfort and joy, putting my mind at ease. <br>
+                I cherish this time, this brief little dance, <br>
+                A promising glimpse of a budding romance. <br>
+
+                So here’s to the magic of chance encounters, <br>
+                To blooming connections, and endless banters. <br>
+                Though our journey is new, it feels just right; <br>
+                A beautiful girl, a spark in the night. 
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
