@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakili Muyathi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #af4c9d, #e51e5a);
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .poem-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            color: #f0e6f6;
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 300px;
+            flex: 1 1 300px;
+        }
+
+        video {
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            flex: 1 1 600px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .poem-container {
+                font-size: 1rem;
+                padding: 15px;
+            }
+
+            video {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .poem-container {
+                font-size: 0.9rem;
+                padding: 10px;
+                max-width: none;
+                text-align: center;
+            }
+
+            video {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="background-audio" loop>
+        <source src="saint-jhn-the-best-part-of-life-official-music-video_N2K4SBWR.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.getElementById('background-audio').volume = 0.1; // Set volume to 10%
+
+        // Function to play audio when the video is clicked
+        function playAudioOnClick() {
+            const audio = document.getElementById('background-audio');
+            audio.play()
+                .then(() => {
+                    console.log("Audio started successfully.");
+                })
+                .catch((error) => {
+                    console.error("Audio playback failed:", error);
+                    alert("Audio playback failed. Ensure the file is accessible and autoplay restrictions are met.");
+                });
+        }
+    </script>
+
+    <div class="container">
+        <div class="poem-container">
+            <p>
+                In a fleeting moment, our paths aligned, <br>
+                A spark ignited, two souls intertwined. <br>
+                Your laughter, like music, played in the air, <br>
+                A melody sweet, so gentle and rare. <br><br>
+
+                With every glance, my heart took flight, <br>
+                As the world around us faded from sight. <br>
+                Your eyes, like stars, hold stories untold, <br>
+                A universe glimmering, brilliant and bold.
+            </p>
+        </div>
+
+        <video id="background-audio" controls loop onclick="playAudioOnClick()">
+            <source src="muya kiss.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="poem-container">
+            <p>
+                
+
+                The warmth of your smile, a soft summer breeze, <br>
+                Brings comfort and joy, putting my mind at ease. <br>
+                I cherish this time, this brief little dance, <br>
+                A promising glimpse of a budding romance. <br>
+                So here’s to the magic of chance encounters, <br>
+                To blooming connections, and endless banters. <br>
+                Though our journey is new, it feels just right; <br>
+                A beautiful girl, a spark in the night.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
