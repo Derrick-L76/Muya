@@ -36,6 +36,39 @@
             flex: 1 1 300px;
         }
 
+        .play-button {
+            margin-top: 2px;
+            padding: 5px 5px;
+            font-size: 2rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            color: rgb(0, 0, 0);
+            background: #ff47bf;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .play-button:hover {
+            background: #FF1493;
+            transform: scale(1.05);
+        }
+
+        .play-button:hover::after {
+            content: "😊 🌸 🌹 ❤️";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            animation: floatUp 1s ease;
+            color: #FF1493;
+        }
+
         video {
             max-width: 600px;
             border-radius: 10px;
@@ -114,6 +147,7 @@
 
     <div class="container">
         <div class="poem-container">
+            <h1><button class="play-button" onclick="document.getElementById('background-audio').play()">Wakili Muyathi</button></h1>
             <p>
                 In a fleeting moment, our paths aligned, <br>
                 A spark ignited, two souls intertwined. <br>
